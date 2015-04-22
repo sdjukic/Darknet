@@ -127,7 +127,7 @@ public class Player : Photon.MonoBehaviour {
 	
 	// Remote procedure calls (RPC) useful for data that does not constantly change.
 	// Adding "[RPC]" allows it to be called over the network.
-	// RPC sent by caling networkView.RPC().
+	// RPC sent by caling photonView.RPC().
 	[RPC] void UpdateHP(int hitpoints) {
 		hp = hitpoints;
 		if (photonView.isMine) {

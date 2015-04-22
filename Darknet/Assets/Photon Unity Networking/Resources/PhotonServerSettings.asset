@@ -15,7 +15,7 @@ MonoBehaviour:
   Protocol: 0
   ServerAddress: 
   ServerPort: 5055
-  PreferredRegion: 0
+  PreferredRegion: 1
   AppID: 91694b75-1897-46de-81b1-f99b01151087
   PingCloudServersOnAwake: 0
   RpcList:

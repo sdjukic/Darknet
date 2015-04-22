@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &161247169
 GameObject:
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 161247169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cac29c748cfaec4ca483d0dd80db04b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ae9138e5244b4dba9c26d8463015280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   title: User Registration
@@ -107,10 +108,10 @@ MonoBehaviour:
   emailLabel: Email
   passwordLabel: Password
   confirmPasswordLabel: Confirm Password
-  nextScene: PFDN_UserLoginScene
-  confirmScene: PFDN_PurchaseScene
-  playfabBackground: {fileID: 2800000, guid: e71c376de41a70d469dddf7728eed05f, type: 3}
-  cursor: {fileID: 2800000, guid: ab070570883cf354d921d07167b0c9f0, type: 3}
+  nextScene: PF_UserLoginScene
+  confirmScene: PF_PurchaseScene
+  playfabBackground: {fileID: 2800000, guid: 1521111e624ab4ce8bbf667ae4ef8f74, type: 3}
+  cursor: {fileID: 2800000, guid: 161f990d8e95445a88b16adafdeb9bf9, type: 3}
   emailNotAvailable: That email address has already been registered.
   usernameNotAvailable: That username has already been already taken.
   invalidPassword: Password is invalid (6-24 characters).
@@ -152,23 +153,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 203898074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8574d644b14da944db6a59c968f55eca, type: 3}
+  m_Script: {fileID: 11500000, guid: 5db2a018374bf4a40b100d8719954657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   title: User Login
   userNameLabel: User Name
   passwordLabel: Password
-  nextScene: PFDN_PurchaseScene
-  previousScene: PFDN_UserRegisterScene
-  playfabBackground: {fileID: 2800000, guid: e71c376de41a70d469dddf7728eed05f, type: 3}
-  cursor: {fileID: 2800000, guid: ab070570883cf354d921d07167b0c9f0, type: 3}
+  nextScene: PF_PurchaseScene
+  previousScene: PF_UserRegisterScene
+  playfabBackground: {fileID: 2800000, guid: 1521111e624ab4ce8bbf667ae4ef8f74, type: 3}
+  cursor: {fileID: 2800000, guid: 161f990d8e95445a88b16adafdeb9bf9, type: 3}
   accountNotFound: That account could not be found.
   accountBanned: That account has been banned.
   invalidPassword: Password is invalid (6-24 characters).
   invalidUsername: Username is invalid (3-24 characters).
   wrongPassword: Wrong password for that user.
   LoggedIn: 0
-  NetworkManagerPrefab: {fileID: 157050, guid: c74754dcac30b804588696bdffa6252d, type: 2}
+  NetworkManagerPrefab: {fileID: 157050, guid: f28d0c1df389c464d834326528df6b19, type: 2}
 --- !u!4 &203898076
 Transform:
   m_ObjectHideFlags: 0
