@@ -40,4 +40,9 @@ MonoBehaviour:
   - UpdateHP
   - UpdateLVL
   - UpdateMP
+  - DestroyMe
+  - PickUpItem
+  - AssignItem
+  - ClaimKill
+  - UpdatePlayerEXP
   DisableAutoOpenWizard: 0

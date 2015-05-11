@@ -4,6 +4,13 @@
 TagManager:
   tags:
   - 
+  - Ground
+  - Obst
+  - NPC
+  - Wall
+  - World
+  - Panel
+  - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
