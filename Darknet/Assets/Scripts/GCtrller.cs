@@ -85,19 +85,30 @@ public class GCtrller :  Photon.MonoBehaviour {
 		}
 	}
 
-	public void npcDied(GameObject which){
+	public void playerDied(GameObject which){
 		Transform location = which.transform;
-		
+
 		if(PhotonNetwork.isMasterClient){
 			int player_id = which.GetComponent<Player>().player_id;
-	        if(npcs_in_game.ContainsKey(player_id)){
-			    PhotonNetwork.Destroy (which);
-			    npcs_in_game.Remove(player_id);
-		    }
+			if(which.tag == "NPC"){
+				Debug.Log("NPC died.");
+		        if(npcs_in_game.ContainsKey(player_id)){
+				    PhotonNetwork.Destroy (which);
+				    npcs_in_game.Remove(player_id);
+			    }
 
-			addNPC();
-			int item_no = Random.Range(0, all_game_items.Length - 1);
-			spawnItem(all_game_items[item_no], (int) location.position.x, (int) location.position.y);
+			    addNPC();
+			    int item_no = Random.Range(0, all_game_items.Length - 1);
+			    spawnItem(all_game_items[item_no], (int) location.position.x, (int) location.position.y);
+			} else {
+                Debug.Log("Player died.");
+                which.GetComponent<Player>().currentHealth = 100;   // reset health
+                which.GetComponent<Player>().currentEXP -= (int) (which.GetComponent<Player>().currentEXP * 0.2f);
+                Vector3 result = new Vector3(Random.Range(-61,-51), Random.Range(0, -14), 0.0f);
+                which.GetComponent<PlayerController>().teleportPlayer(result);
+			}
+
+			
 		}
 	}
 

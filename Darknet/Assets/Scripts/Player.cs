@@ -119,7 +119,13 @@ public class Player : Photon.MonoBehaviour {
 		// Updates based on host input
 		if (photonView.isMine) {
 			gameObject.GetComponent<Movement>().InputMovement();
-			InputEvents();			
+				
+			if(currentHealth <= 0){
+				GameObject world = GameObject.FindGameObjectWithTag("World");
+		        if(world){
+				    world.GetComponent<GCtrller>().playerDied(gameObject);
+				}
+			}		
 		}
 		else {
 			SyncMovement();
@@ -134,11 +140,6 @@ public class Player : Photon.MonoBehaviour {
 		rigidbody2D.position = Vector2.Lerp(syncStartPosition, syncEndPosition, (syncTime+1)/(syncDelay+1));
 	}
 	
-	private void InputEvents() {
-		/*
-		GAME LOGIC
-		*/
-	}
 
 	// Remote procedure calls (RPC) useful for data that does not constantly change.
 	// Adding "[RPC]" allows it to be called over the network.
@@ -191,6 +192,9 @@ public class Player : Photon.MonoBehaviour {
 
     public void acceptDamage(int damage){
     	photonView.RPC("UpdateCurrentHP", PhotonTargets.All, damage);
+    	if(gameObject.tag == "NPC"){
+    		gameObject.GetComponent<NPCController>().fightBack();
+    	}
     }
 
 	public void hp_status(){
